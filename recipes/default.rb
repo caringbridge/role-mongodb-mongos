@@ -19,6 +19,10 @@ end
 
 include_recipe 'mongodb::mongos'
 
+service 'mongod' do
+  action :disable
+end
+
 hostsfile_entry '33.33.33.42' do
   hostname  'shard1'
   action    :create
