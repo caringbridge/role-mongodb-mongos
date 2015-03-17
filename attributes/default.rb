@@ -27,3 +27,35 @@ default['mongodb']['sharded_collections'] = {
   'CB.tribute' => 'siteId',
   'CB.visitor' => '_id'
 }
+
+
+# Testing for user setup.
+default['mongodb']['admin'] = {
+  'username' => 'AdminUser',
+  'password' => 'admin',
+  'roles' => %w(userAdminAnyDatabase dbAdminAnyDatabase dbAdmin clusterAdmin userAdmin ),
+  'database' => 'admin'
+}
+
+default['mongodb']['users'] = [ {
+  'username' => 'cnuser',
+  'password' => 'rockc1ty',
+  'roles' => %w(readWrite),
+  'database' => 'CB'
+}, {
+  'username' => 'knelson',
+  'password' => 'cbknelson15',
+  'roles' => %w(read),
+  'database' => 'CB'
+}, {
+  'username' => 'lernst',
+  'password' => 'cblernst15',
+  'roles' => %w(read),
+  'database' => 'CB'
+}, {
+  'username' => 'jahmed',
+  'password' => 'cbjahmed',
+  'roles' => %w(read),
+  'database' => 'CB'
+}
+ ]

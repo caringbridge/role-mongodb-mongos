@@ -4,7 +4,7 @@ maintainer_email 'svanzee@caringbridge.org'
 license          'All rights reserved'
 description      'Installs/Configures role-mongodb-mongos'
 long_description 'Installs/Configures role-mongodb-mongos'
-version          '0.1.2'
+version          '0.1.3'
 
 depends 'mongodb', '0.16.1'
 depends 'yum'
