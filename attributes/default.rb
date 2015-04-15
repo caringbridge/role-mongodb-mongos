@@ -6,6 +6,13 @@ default['mongodb']['config']['logpath'] = '/data/mongos/log/mongos.log'
 default[:mongodb][:instance_name] = 'mongos'
 default['mongodb']['is_mongos'] = true
 
+# set for mongo gem - new version breaks setting replica set and other things
+# that require the use of a mongo connection.
+default['mongodb']['ruby_gems'] = {
+  :mongo => '1.12.0',
+  :bson_ext => '1.12.0'
+}
+
 # added for testing shard collection creation.
 default['mongodb']['sharded_collections'] = {
   'CB.coauthor_invite' => 'siteId',
